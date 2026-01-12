@@ -3,36 +3,38 @@ import { ExternalLink, Github, Smartphone, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import sceneImage from '../assets/Scene.svg';
+
 
 export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'EcoTrack - Sustainability App',
-      description: 'A comprehensive app for tracking personal carbon footprint and promoting sustainable living habits with gamification elements.',
-      image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU2ODU0Mjg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['Flutter', 'Firebase', 'Charts', 'Animations'],
-      features: ['Real-time tracking', 'Social features', 'Achievement system', 'Data visualization'],
-      status: 'Live on App Store',
-      rating: 4.8,
-      downloads: '10K+',
-      github: '#',
+      title: 'Weather Safety App',
+      description: 'A comprehensive Flutter application designed to keep users informed about weather conditions and ensure their safety through real-time alerts and interactive mapping.',
+      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1000&auto=format&fit=crop', // Temporary weather placeholder
+      technologies: ['Flutter', 'Dart', 'Provider', 'flutter_map', 'Geolocator'],
+      features: ['Real-Time Updates', 'Safety Alerts', 'Interactive Maps', 'Smart Insights'],
+      status: 'Live',
+      rating: 5.0,
+      downloads: '100+',
+      github: 'https://github.com/SalmaYounissFCI/Weather-Safety-App.git',
       liveUrl: '#',
-      color: 'from-green-500 to-emerald-600'
+      color: 'from-purple-500 to-indigo-600'
     },
     {
       id: 2,
-      title: 'MindSpace - Mental Wellness',
-      description: 'A mindfulness and meditation app with guided sessions, mood tracking, and personalized wellness recommendations.',
-      image: 'https://images.unsplash.com/photo-1628277613967-6abca504d0ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmbHV0dGVyJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MXx8fHwxNzU2OTEyNTg1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['Flutter', 'Dart', 'SQLite', 'Audio'],
-      features: ['Guided meditation', 'Mood tracking', 'Progress analytics', 'Offline mode'],
-      status: 'In Development',
+      title: 'StyleShop - E-Commerce App',
+      description: 'A premium, comprehensive E-Commerce solution built with Flutter, featuring secure authentication, product browsing, cart management, and order tracking.',
+      image: sceneImage,
+      technologies: ['Flutter', 'Dart', 'Firebase', 'Provider'],
+      features: ['Secure Auth', 'Product Search', 'Order Tracking', 'Favorites'],
+      status: 'Completed',
       rating: 4.9,
-      downloads: '5K+',
+      downloads: '500+',
       github: '#',
       liveUrl: '#',
-      color: 'from-purple-500 to-indigo-600'
+      color: 'from-blue-500 to-cyan-600'
     },
     {
       id: 3,
@@ -98,9 +100,8 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 * index }}
                 viewport={{ once: true }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
+                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  }`}
               >
                 {/* Project Image */}
                 <motion.div
@@ -115,11 +116,11 @@ export default function Projects() {
                         <ImageWithFallback
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </div>
-                      
+
                       {/* Project stats overlay */}
                       <div className="absolute top-8 right-8 backdrop-blur-sm bg-card/90 rounded-xl p-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                         <div className="flex items-center gap-2 text-sm">
@@ -142,8 +143,8 @@ export default function Projects() {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <Badge 
-                        variant="secondary" 
+                      <Badge
+                        variant="secondary"
                         className={`bg-gradient-to-r ${project.color} text-white px-3 py-1`}
                       >
                         {project.status}
@@ -155,11 +156,11 @@ export default function Projects() {
                         <span>{project.downloads}</span>
                       </div>
                     </div>
-                    
+
                     <h3 className="text-2xl md:text-3xl text-foreground">
                       {project.title}
                     </h3>
-                    
+
                     <p className="text-muted-foreground text-lg leading-relaxed">
                       {project.description}
                     </p>

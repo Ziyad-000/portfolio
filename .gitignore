@@ -31,3 +31,14 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# ESLint cache
+.eslintcache
