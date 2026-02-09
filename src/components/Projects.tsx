@@ -4,15 +4,33 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import sceneImage from '../assets/Scene.svg';
+import weatherAppImage from '../assets/Weather Safety App.svg';
+import codioImage from '../assets/Codio.svg';
 
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  features: string[];
+  status: string;
+  rating: number;
+  downloads: string;
+  github: string;
+  liveUrl: string;
+  color: string;
+  imageFit?: string;
+}
 
 export default function Projects() {
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: 'Weather Safety App',
       description: 'A comprehensive Flutter application designed to keep users informed about weather conditions and ensure their safety through real-time alerts and interactive mapping.',
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1000&auto=format&fit=crop', // Temporary weather placeholder
+      image: weatherAppImage,
       technologies: ['Flutter', 'Dart', 'Provider', 'flutter_map', 'Geolocator'],
       features: ['Real-Time Updates', 'Safety Alerts', 'Interactive Maps', 'Smart Insights'],
       status: 'Live',
@@ -38,14 +56,14 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: 'FlutterShop - E-commerce',
-      description: 'Modern e-commerce mobile app with advanced features including AI-powered recommendations and seamless checkout.',
-      image: 'https://images.unsplash.com/photo-1750056393326-8feed2a1c34f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtb2JpbGUlMjBhcHAlMjB1aXxlbnwxfHx8fDE3NTY5MTI1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['Flutter', 'REST API', 'Payment Gateway', 'Push Notifications'],
-      features: ['Product catalog', 'Secure payments', 'Order tracking', 'Wishlist & cart'],
-      status: 'Recently Launched',
-      rating: 4.7,
-      downloads: '15K+',
+      title: 'Codio - Smart Deals',
+      description: 'A comprehensive ecosystem connecting users with exclusive deals and student offers, featuring a cross-platform mobile app and a powerful web admin dashboard.',
+      image: codioImage,
+      technologies: ['Flutter', 'Supabase', 'Provider', 'MVVM', 'PostgreSQL'],
+      features: ['Student Zone', 'Admin Dashboard', 'Smart Filtering', 'Company Directory'],
+      status: 'Client Project (Unreleased)',
+      rating: 0,
+      downloads: 'N/A',
       github: '#',
       liveUrl: '#',
       color: 'from-blue-500 to-cyan-600'
@@ -110,13 +128,13 @@ export default function Projects() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
                     <div className="relative backdrop-blur-sm bg-card/80 rounded-2xl p-4 shadow-2xl border border-border/30 group-hover:shadow-3xl transition-all duration-500">
                       <div className="relative overflow-hidden rounded-xl">
                         <ImageWithFallback
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-110"
+                          className={`w-full h-[300px] ${project.imageFit || 'object-cover'} transition-transform duration-700 group-hover:scale-110`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </div>
@@ -198,7 +216,7 @@ export default function Projects() {
                           viewport={{ once: true }}
                           className="flex items-center gap-2 text-muted-foreground"
                         >
-                          <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                          <div className={`w-1.5 h-1.5 bg-gradient-to-r ${project.color} rounded-full`}></div>
                           <span className="text-sm">{feature}</span>
                         </motion.div>
                       ))}

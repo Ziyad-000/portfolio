@@ -148,8 +148,8 @@ export default function Contact() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <div className="backdrop-blur-sm bg-white/80 rounded-2xl p-8 shadow-xl border border-white/30">
-                <h3 className="text-2xl text-gray-900 mb-8">
+              <div className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 rounded-2xl p-8 shadow-xl border border-white/30 dark:border-slate-800">
+                <h3 className="text-2xl text-gray-900 dark:text-white mb-8">
                   Get In Touch
                 </h3>
 
@@ -166,7 +166,7 @@ export default function Contact() {
                       }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.02 }}
-                      className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50/80 transition-all duration-300 group"
+                      className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50/80 dark:hover:bg-slate-800/50 transition-all duration-300 group"
                     >
                       <div
                         className={`p-3 rounded-lg bg-gradient-to-br ${info.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}
@@ -174,13 +174,13 @@ export default function Contact() {
                         <info.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-gray-900 mb-1">
+                        <h4 className="text-gray-900 dark:text-white mb-1">
                           {info.title}
                         </h4>
-                        <p className="text-gray-700 mb-1">
+                        <p className="text-gray-700 dark:text-gray-300 mb-1">
                           {info.value}
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-500 dark:text-gray-400 text-sm">
                           {info.description}
                         </p>
                       </div>
@@ -188,20 +188,20 @@ export default function Contact() {
                   ))}
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-gray-200">
-                  <h4 className="text-gray-900 mb-4">
+                <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-800">
+                  <h4 className="text-gray-900 dark:text-white mb-4">
                     Availability
                   </h4>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <span className="text-gray-600 text-sm">
+                      <span className="text-gray-600 dark:text-gray-300 text-sm">
                         Available for new projects
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Calendar className="w-4 h-4 text-gray-400" />
-                      <span className="text-gray-600 text-sm">
+                      <span className="text-gray-600 dark:text-gray-300 text-sm">
                         Typically responds within 24 hours
                       </span>
                     </div>
@@ -218,7 +218,7 @@ export default function Contact() {
               viewport={{ once: true }}
               className="lg:col-span-2"
             >
-              <div className="backdrop-blur-sm bg-white/80 rounded-2xl p-8 shadow-xl border border-white/30">
+              <div className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 rounded-2xl p-8 shadow-xl border border-white/30 dark:border-slate-800">
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-6"
@@ -232,7 +232,7 @@ export default function Contact() {
                     >
                       <Label
                         htmlFor="name"
-                        className="text-gray-700"
+                        className="text-gray-700 dark:text-gray-300"
                       >
                         Full Name *
                       </Label>
@@ -246,7 +246,7 @@ export default function Contact() {
                             e.target.value,
                           )
                         }
-                        className="mt-2 bg-white/50 border-gray-200 focus:border-purple-400 transition-colors duration-300"
+                        className="mt-2 bg-white/50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 dark:text-white dark:placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
                         placeholder="John Doe"
                         required
                       />
@@ -260,7 +260,7 @@ export default function Contact() {
                     >
                       <Label
                         htmlFor="email"
-                        className="text-gray-700"
+                        className="text-gray-700 dark:text-gray-300"
                       >
                         Email Address *
                       </Label>
@@ -274,7 +274,7 @@ export default function Contact() {
                             e.target.value,
                           )
                         }
-                        className="mt-2 bg-white/50 border-gray-200 focus:border-purple-400 transition-colors duration-300"
+                        className="mt-2 bg-white/50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 dark:text-white dark:placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
                         placeholder="john@example.com"
                         required
                       />
@@ -290,7 +290,7 @@ export default function Contact() {
                     >
                       <Label
                         htmlFor="company"
-                        className="text-gray-700"
+                        className="text-gray-700 dark:text-gray-300"
                       >
                         Company/Organization
                       </Label>
@@ -304,7 +304,7 @@ export default function Contact() {
                             e.target.value,
                           )
                         }
-                        className="mt-2 bg-white/50 border-gray-200 focus:border-purple-400 transition-colors duration-300"
+                        className="mt-2 bg-white/50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 dark:text-white dark:placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
                         placeholder="Your Company"
                       />
                     </motion.div>
@@ -317,7 +317,7 @@ export default function Contact() {
                     >
                       <Label
                         htmlFor="projectType"
-                        className="text-gray-700"
+                        className="text-gray-700 dark:text-gray-300"
                       >
                         Project Type *
                       </Label>
@@ -330,7 +330,7 @@ export default function Contact() {
                           )
                         }
                       >
-                        <SelectTrigger className="mt-2 bg-white/50 border-gray-200 focus:border-purple-400">
+                        <SelectTrigger className="mt-2 bg-white/50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 dark:text-white focus:border-purple-400">
                           <SelectValue placeholder="Select project type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -363,7 +363,7 @@ export default function Contact() {
                     >
                       <Label
                         htmlFor="budget"
-                        className="text-gray-700"
+                        className="text-gray-700 dark:text-gray-300"
                       >
                         Project Budget
                       </Label>
@@ -373,7 +373,7 @@ export default function Contact() {
                           handleInputChange("budget", value)
                         }
                       >
-                        <SelectTrigger className="mt-2 bg-white/50 border-gray-200 focus:border-purple-400">
+                        <SelectTrigger className="mt-2 bg-white/50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 dark:text-white focus:border-purple-400">
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
                         <SelectContent>
@@ -404,7 +404,7 @@ export default function Contact() {
                     >
                       <Label
                         htmlFor="timeline"
-                        className="text-gray-700"
+                        className="text-gray-700 dark:text-gray-300"
                       >
                         Project Timeline
                       </Label>
@@ -414,7 +414,7 @@ export default function Contact() {
                           handleInputChange("timeline", value)
                         }
                       >
-                        <SelectTrigger className="mt-2 bg-white/50 border-gray-200 focus:border-purple-400">
+                        <SelectTrigger className="mt-2 bg-white/50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 dark:text-white focus:border-purple-400">
                           <SelectValue placeholder="Select timeline" />
                         </SelectTrigger>
                         <SelectContent>
@@ -446,7 +446,7 @@ export default function Contact() {
                   >
                     <Label
                       htmlFor="message"
-                      className="text-gray-700"
+                      className="text-gray-700 dark:text-gray-300"
                     >
                       Project Details *
                     </Label>
@@ -459,7 +459,7 @@ export default function Contact() {
                           e.target.value,
                         )
                       }
-                      className="mt-2 bg-white/50 border-gray-200 focus:border-purple-400 transition-colors duration-300 min-h-[120px]"
+                      className="mt-2 bg-white/50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 dark:text-white dark:placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300 min-h-[120px]"
                       placeholder="Tell me about your project idea, goals, and any specific requirements..."
                       required
                     />
@@ -497,9 +497,9 @@ export default function Contact() {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.9 }}
                   viewport={{ once: true }}
-                  className="mt-6 pt-6 border-t border-gray-200 text-center"
+                  className="mt-6 pt-6 border-t border-gray-200 dark:border-slate-800 text-center"
                 >
-                  <div className="flex items-center justify-center gap-2 text-gray-600">
+                  <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400">
                     <MessageCircle className="w-4 h-4" />
                     <span className="text-sm">
                       I'll get back to you within 24 hours
